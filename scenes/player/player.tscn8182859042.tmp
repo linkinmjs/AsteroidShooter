@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://btp3b8fcowohm"]
+
+[ext_resource type="Texture2D" uid="uid://dcx767hkoo38g" path="res://assets/sprites/ship.png" id="1_8afob"]
+[ext_resource type="Script" uid="uid://b1v1sscd1v0d8" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="PackedScene" uid="uid://dxx5wejhxe4fi" path="res://scenes/laser/laser.tscn" id="2_gmlin"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_dovo2")
+speed = 450.0
+laser_scene = ExtResource("2_gmlin")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_8afob")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-30, -50, -22, -50, 39, -5, 39, 4, -22, 50, -30, 50)

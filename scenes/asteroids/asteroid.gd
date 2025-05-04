@@ -20,4 +20,8 @@ func _process(delta: float) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	queue_free() # queue_free delete scenes
+	var is_laser = area.is_in_group("laser")
+	var is_player = area.is_in_group("player")
+	 
+	if is_laser or is_player:
+		queue_free() # queue_free delete scenes

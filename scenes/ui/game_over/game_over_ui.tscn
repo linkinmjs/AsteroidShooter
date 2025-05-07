@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0vp4pm11jw1g"]
+
+[ext_resource type="LabelSettings" uid="uid://ct5nrgjw48i34" path="res://resources/zyzol_orange_70.tres" id="1_82t2g"]
+[ext_resource type="Script" uid="uid://5nr5wfgnl2n0" path="res://scenes/ui/game_over/game_over_ui.gd" id="1_etkqh"]
+[ext_resource type="LabelSettings" uid="uid://bnw0u0yx6l647" path="res://resources/zyzol_white_28.tres" id="2_ijods"]
+[ext_resource type="FontFile" uid="uid://c2dn8jmx8t0qy" path="res://assets/fonts/Zyzol.otf" id="3_ijods"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_etkqh"]
+font = ExtResource("3_ijods")
+font_color = Color(1, 0.568627, 0.368627, 0.627451)
+
+[node name="GameOverUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_etkqh")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = ExtResource("1_82t2g")
+
+[node name="PressSpaceLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Press space to restart"
+label_settings = ExtResource("2_ijods")
+horizontal_alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Your Score: 1000"
+label_settings = SubResource("LabelSettings_etkqh")
+horizontal_alignment = 1

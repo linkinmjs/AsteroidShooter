@@ -4,10 +4,10 @@ extends Area2D
 @export var max_speed = 400
 @export var min_rotation_speed = -180
 @export var max_rotation_speed = 180
+@export var points: int
 
 var random_speed
 var random_rotation
-
 
 func _ready():
 	random_speed = randf_range(min_speed, max_speed)
@@ -22,6 +22,9 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	var is_laser = area.is_in_group("laser")
 	var is_player = area.is_in_group("player")
-	 
+	
+	if is_laser:
+		GameManager.addScore(points)
+	
 	if is_laser or is_player:
 		queue_free() # queue_free delete scenes

@@ -11,6 +11,7 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("1_nnmk3")
 min_speed = 250
 max_speed = 350
+points = 10
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

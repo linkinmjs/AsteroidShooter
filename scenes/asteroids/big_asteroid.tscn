@@ -9,6 +9,7 @@ radius = 81.0
 [node name="BigAsteroid" type="Area2D" groups=["asteroids"]]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_y2s20")
+points = 5
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

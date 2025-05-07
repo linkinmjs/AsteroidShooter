@@ -4,7 +4,9 @@ extends CharacterBody2D
 @export var speed: float
 
 func _physics_process(delta: float) -> void:
-	
+	if GameManager.is_game_over:
+		return
+		
 	if Input.is_action_just_pressed("shoot"):
 		create_laser()
 	
@@ -24,4 +26,5 @@ func create_laser():
 
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("asteroids"):
+		GameManager.set_is_game_over(true)
 		queue_free()

@@ -54,6 +54,7 @@ label_settings = ExtResource("2_ijods")
 horizontal_alignment = 1
 
 [node name="FinalScoreLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Your Score: 1000"
 label_settings = SubResource("LabelSettings_etkqh")

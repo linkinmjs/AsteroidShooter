@@ -1,14 +1,16 @@
 extends Marker2D
 
 @export var asteroids: Array[PackedScene]
-
 @export var min_y: float
 @export var max_y: float
 
+@onready var timer: Timer = $Timer
+
+
 func create_asteroid():
 	if GameManager.is_game_over:
-		$Timer.stop()
-		
+		timer.stop()
+	
 	var random_asteroid_scene = asteroids.pick_random()
 	var random_asteroid_instance = random_asteroid_scene.instantiate()
 	add_child(random_asteroid_instance)

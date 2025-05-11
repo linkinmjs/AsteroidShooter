@@ -13,6 +13,7 @@ speed = 1000.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 rotation = 1.5708
 texture = ExtResource("1_0kheo")
 

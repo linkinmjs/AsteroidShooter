@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvvly13isx8ev"]
+[gd_scene load_steps=5 format=3 uid="uid://bvvly13isx8ev"]
 
 [ext_resource type="Texture2D" uid="uid://d0m3unk7hj83u" path="res://assets/sprites/rock-small.png" id="1_ckhff"]
 [ext_resource type="Script" uid="uid://dyn3l56vgp3qn" path="res://scenes/asteroids/asteroid.gd" id="1_kfbcv"]
+[ext_resource type="PackedScene" uid="uid://c7842tjow1s5x" path="res://scenes/particles/explosion.tscn" id="2_ooo1b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kfbcv"]
 radius = 37.0
@@ -12,9 +13,11 @@ script = ExtResource("1_kfbcv")
 min_speed = 200
 max_speed = 300
 points = 15
+explosion_scene = ExtResource("2_ooo1b")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_ckhff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bewnyyxc6ooq6"]
+
+[ext_resource type="Script" uid="uid://cetfv85y0ok4l" path="res://scenes/spawners/power_up_spawner.gd" id="1_umnrb"]
+
+[node name="PowerUpSpawner" type="Marker2D"]
+script = ExtResource("1_umnrb")
+max_y = 648.0
+max_x = 1152.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

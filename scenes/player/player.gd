@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var laser_scene: PackedScene
 @export var speed: float
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if GameManager.is_game_over:
 		return
 		
